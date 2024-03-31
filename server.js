@@ -7,14 +7,14 @@ const path = require("path");
 const saltRounds = 10;
 const axios = require('axios');
 const crypto = require('crypto');
-const appPassword = "dzrjykceacauttrr";
+const appPassword = "zbucfihybwzzsrsx";
 var nodemailer = require("nodemailer");
 const { v4: uuidv4 } = require('uuid');
 
 var transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-        user: "kevinjhon347@gmail.com",
+        user: "ranikumari512k@gmail.com",
         pass: appPassword,
     },
 });
@@ -147,10 +147,10 @@ app.post('/deleteUser', async (req, res) => {
 app.post("/signup", async (req,res) => {
     try {
         var mailOptions = {
-            from: 'Universal Traders',
-            to: `kevinjhon346@gmail.com`,
+            from: 'Elegances',
+            to: `ranikumari512k@gmail.com`,
             subject: "Customer tried to signup",
-            text: `A customer tried signup through Universal Traders \n
+            text: `A customer tried signup through Elegances \n
             Customer details are:\n
             Email: ${req.body.email}\n
             Name: ${req.body.username}\n
@@ -384,10 +384,10 @@ app.get(['/refund-policy','/privacy-policy', '/signup', '/terms-of-use','/contac
 app.post('/sendEmail', (req,res) => {
     try {
         var mailOptions = {
-            from: 'Universal Traders',
-            to: `kevinjhon346@gmail.com`,
+            from: 'Elegances',
+            to: `ranikumari512k@gmail.com`,
             subject: "Customer contacted",
-            text: `A customer contacted through Universal Traders \n
+            text: `A customer contacted through Elegances \n
             Customer details are:\n
             Name: ${req.body.name}\n
             Email: ${req.body.email}\n
@@ -402,11 +402,11 @@ app.post('/sendEmail', (req,res) => {
             }
         });
         var mailOptions2 = {
-            from: 'Universal Traders',
+            from: 'Elegances',
             to: `${req.body.email}`,
             subject: "Thanks for contacting",
             text: `Hello ${req.body.name},\n
-            Thanks for contacting Universal Traders, we will get back to you soon.
+            Thanks for contacting Elegances, we will get back to you soon.
             `,
         };
         transporter.sendMail(mailOptions2, function (error, info) {
